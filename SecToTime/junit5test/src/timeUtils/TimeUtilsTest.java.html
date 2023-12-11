@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>TimeUtilsTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TimeUtilsTest (11 Dec 2023 17.14.32)</a> &gt; <a href="../../index.html" class="el_group">junit5test</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">timeUtils</a> &gt; <span class="el_source">TimeUtilsTest.java</span></div><h1>TimeUtilsTest.java</h1><pre class="source lang-java linenums">package timeUtils;
+
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+<span class="fc" id="L9">class TimeUtilsTest {</span>
+	
+<span class="fc" id="L11">	private TimeUtils timeutils = new TimeUtils();</span>
+	
+	@ParameterizedTest(name = &quot;syote {0} tulos {1}&quot;)
+	@CsvSource({&quot;3665 , 1:01:05&quot;, &quot;0, 0:00:00&quot;, &quot;7200, 2:00:00&quot;, &quot;1500, 0:25:00&quot;, &quot;45, 0:00:45&quot;, &quot;3666, 1:01:06&quot;, &quot;3661, 1:01:01&quot;, &quot;59, 0:00:59&quot;, &quot;61, 0:01:01&quot;, &quot;1, 0:00:01&quot;})
+	public void testTime(int aika, String tulos) {
+<span class="fc" id="L16">		String message =  aika + &quot; käänetty väärin, tulos: &quot; + tulos;</span>
+<span class="fc" id="L17">		assertEquals(tulos, timeutils.secToTime(aika), message);</span>
+<span class="fc" id="L18">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span>TimeUtilsTest (11 Dec 2023 17.14.32)</div></body></html>
